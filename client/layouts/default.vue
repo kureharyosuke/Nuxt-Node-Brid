@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <!-- Header 가로로 먼저나누고 -->
+    <!--# Header 가로로 먼저나누고 -->
     <nav>
       <v-toolbar dark color="green">
         <v-toolbar-title>
@@ -20,19 +20,30 @@
         </v-toolbar-items>
       </v-toolbar>
     </nav>
+    <!--# Header 가로로 먼저나누고 -->
+    <!-- # body 페이지 내용 -->
     <v-row>
       <!-- 로그인창 xs는 cols -->
-      <v-col cols="12" md="4"> 로그인 </v-col>
+      <v-col cols="12" md="4">
+        <login-form />
+      </v-col>
       <v-col cols="12" md="8">
-        <!-- nuxt를 써주면 -->
+        <!-- nuxt를 써주면 바뀌는 부분 -->
+        <!-- 컨텐츠 -->
         <nuxt />
       </v-col>
     </v-row>
+    <!-- # body 페이지 내용 -->
   </v-app>
 </template>
 
 <script>
-export default {};
+import LoginForm from "~/components/LoginForm.vue";
+export default {
+  components: {
+    LoginForm,
+  },
+};
 </script>
 
 <style></style>
