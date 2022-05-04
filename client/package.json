@@ -5,8 +5,10 @@
   "license": "MIT",
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/vuetify": "^1.12.3",
     "axios": "^0.27.2",
     "nuxt": "^2.15.8",
-    "vue": "^3.2.33"
+    "vue": "^3.2.33",
+    "vuetify": "^2.6.5"
   }
 }
