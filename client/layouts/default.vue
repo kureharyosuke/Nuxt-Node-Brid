@@ -22,7 +22,7 @@
     </nav>
     <!--# Header 가로로 먼저나누고 -->
     <!-- # body 페이지 내용 -->
-    <v-row>
+    <v-row no-gutters>
       <!-- 로그인창 xs는 cols -->
       <v-col cols="12" md="4">
         <login-form />
