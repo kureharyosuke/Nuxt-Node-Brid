@@ -12,10 +12,10 @@
 
 <script>
 export default {
-  layout: "default",
   components: {
     PostCard: () => import("../components/PostCard.vue"),
   },
+  layout: "default",
   data() {
     return {
       name: "Nuxt.js index",
