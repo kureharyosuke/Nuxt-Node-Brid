@@ -13,11 +13,13 @@
       <v-card style="margin-bottom: 20px">
         <v-container>
           <v-subheader>팔로잉</v-subheader>
+          <follow-list />
         </v-container>
       </v-card>
       <v-card style="margin-bottom: 20px">
         <v-container>
           <v-subheader>팔로워</v-subheader>
+          <follow-list />
         </v-container>
       </v-card>
     </v-container>
@@ -26,7 +28,9 @@
 
 <script>
 export default {
-  layout: "admin",
+  components: {
+    FollowList: () => import("~/components/FollowList"),
+  },
   data() {
     return {
       name: "Nuxt.js profile",
