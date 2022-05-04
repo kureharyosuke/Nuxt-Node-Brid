@@ -1,0 +1,46 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["plugin:nuxt/recommended"],
+  "plugins": [],
+  "rules": {
+    "no-console": "off",
+    "vue/max-attributes-per-line": "off",
+    "vue/singleline-html-element-content-newline": "off"
+    // "vue/max-attributes-per-line": [
+    //   "error",
+    //   {
+    //     "singleline": 10,
+    //     "multiline": {
+    //       "max": 1,
+    //       "allowFirstLine": false
+    //     }
+    //   }
+    // ],
+    // "vue/html-self-closing": [
+    //   "error",
+    //   {
+    //     "html": {
+    //       "void": "never",
+    //       "normal": "never",
+    //       "component": "always"
+    //     },
+    //     "svg": "always",
+    //     "math": "always"
+    //   }
+    // ],
+    // "vue/html-closing-bracket-newline": [
+    //   "error",
+    //   {
+    //     "singleline": "never",
+    //     "multiline": "never"
+    //   }
+    // ]
+  }
+}

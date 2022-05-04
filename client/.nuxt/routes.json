@@ -1,0 +1,23 @@
+[
+  {
+    "name": "profile",
+    "path": "/profile",
+    "component": "/Users/ohyunseok/Documents/PROJECTS/NUXTJS/Nuxt-Node-bird/client/pages/profile.vue",
+    "chunkName": "pages/profile",
+    "_name": "_b030440c"
+  },
+  {
+    "name": "signup",
+    "path": "/signup",
+    "component": "/Users/ohyunseok/Documents/PROJECTS/NUXTJS/Nuxt-Node-bird/client/pages/signup.vue",
+    "chunkName": "pages/signup",
+    "_name": "_a679e352"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/ohyunseok/Documents/PROJECTS/NUXTJS/Nuxt-Node-bird/client/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_7342fae3"
+  }
+]
