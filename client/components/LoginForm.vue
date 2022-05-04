@@ -25,7 +25,8 @@ export default {
     };
   },
   methods: {
-    onSubmitLogin() {
+    onSubmitLogin(e) {
+      e.preventDefault();
       this.$refs.form.validation();
     },
   },
