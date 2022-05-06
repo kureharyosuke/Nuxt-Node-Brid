@@ -45,8 +45,13 @@ export default {
   methods: {
     onSubmitForm() {
       if (this.$refs.form.validate()) {
-        // users의 actions에서 signup을 호출한다.
-
+        // users의 actions에서 dispatch를 이용해서 signup을 호출한다.
+        this.$store.dispatch("users/signUp", {
+          email: this.email,
+          password: this.password,
+          passwordConfirm: this.passwordConfirm,
+          nickname: this.nickname,
+        });
         alert("정상적으로 가입되었습니다.");
       } else {
         alert("가입이 실패하였습니다.");
