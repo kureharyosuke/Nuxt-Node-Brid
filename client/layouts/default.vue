@@ -43,11 +43,13 @@
 
 <script>
 import LoginForm from "~/components/LoginForm.vue";
+import { mapState } from "vuex";
 export default {
   components: {
     LoginForm,
   },
   computed: {
+    ...mapState(["posts/name", "users/user"]),
     name() {
       return this.$store.state.posts.name;
     },

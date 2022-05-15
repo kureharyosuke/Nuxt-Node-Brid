@@ -1,9 +1,15 @@
 export const state = () => ({
-  name: "posts",
+  mainPosts: [],
 });
 
 export const mutations = {
-  SETPOSTS(state) {
-    state.name = "goodbye posts";
+  addMainPosts(state, payload) {
+    state.mainPosts.unshift(payload);
+  },
+};
+
+export const actions = {
+  add({ commit }, payload) {
+    commit("addMainPosts", payload, { root: true });
   },
 };
