@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card style="margin-bottom: 20px">
     <v-container>
       <v-form ref="form" v-model="vaild" @submit.prevent="onSubmitForm">
         <!-- vuetify기능: outlined(테투리디자인), auto-grow(), clearable -->
@@ -22,26 +22,47 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {
-      vaild: true,
+      vaild: false,
       hideDetails: true,
       successMessages: [],
       success: false,
       content: "",
     };
   },
+  computed: {
+    ...mapState("users", ["me"]),
+  },
   methods: {
     onChangeTextarea() {
-      this.hideDetails = false;
+      this.hideDetails = true;
+      this.success = false;
+      this.successMessages = "";
     },
-    onSubmitForm() {
+    async onSubmitForm() {
       //@submit.prevent => event.preventDefault() 생략
-      if (this.$ref.form.validate()) {
-        this.$store.dispatch("posts/add", {
-          content: this.content,
-        });
+      if (this.$refs.form.validate()) {
+        try {
+          // 백엔드 상담부분
+          await this.$store.dispatch("posts/add", {
+            content: this.content,
+            User: {
+              nickname: this.me.nickname,
+            },
+            Comments: [],
+            Images: [],
+            id: Date.now(),
+            createdAt: Date.now(),
+          });
+          this.hideDetails = false;
+          this.success = true;
+          this.successMessages = "게시글 등록 성공";
+        } catch (err) {
+          console.error(err);
+        }
       }
     },
   },

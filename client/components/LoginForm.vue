@@ -38,12 +38,12 @@ export default {
   methods: {
     async onSubmitLogin(e) {
       e.preventDefault();
-      if (this.$refs.form.validation()) {
+      if (this.$refs.form.validate()) {
         try {
           await this.$store.dispatch("users/logIn", {
             email: this.email,
             // password: this.password,
-            nickname: "",
+            nickname: "아무개",
           });
         } catch (err) {
           console.error(err);

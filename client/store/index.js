@@ -6,9 +6,9 @@ export const mutations = {
   setHello(state, payload) {
     state.hello = payload;
   },
-  addMainPosts(state, payload) {
-    state.mainPosts.unshift(payload);
-  },
+  // addMainPosts(state, payload) {
+  //   state.mainPosts.unshift(payload);
+  // },
 };
 
 // export const state = () => ({
