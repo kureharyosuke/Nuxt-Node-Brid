@@ -36,18 +36,26 @@ export default {
     },
   },
   methods: {
-    onSubmitLogin(e) {
+    async onSubmitLogin(e) {
       e.preventDefault();
       if (this.$refs.form.validation()) {
-        this.$store.dispatch("users/logIn", {
-          email: this.email,
-          // password: this.password,
-          // nickname: this.nickname,
-        });
+        try {
+          await this.$store.dispatch("users/logIn", {
+            email: this.email,
+            // password: this.password,
+            // nickname: this.nickname,
+          });
+        } catch (err) {
+          console.error(err);
+        }
       }
     },
-    onLogOut() {
-      this.$store.dispatch("users/logOut");
+    async onLogOut() {
+      try {
+        this.$store.dispatch("users/logOut");
+      } catch {
+        console.error(err);
+      }
     },
   },
 };
