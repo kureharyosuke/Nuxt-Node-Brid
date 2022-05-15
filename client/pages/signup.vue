@@ -43,24 +43,52 @@ export default {
     title: "signup page",
   },
   methods: {
-    onSubmitForm() {
+    async onSubmitForm() {
       if (this.$refs.form.validate()) {
-        // users의 actions에서 dispatch를 이용해서 signup을 호출한다.
-        this.$store.dispatch("users/signUp", {
-          email: this.email,
-          password: this.password,
-          passwordConfirm: this.passwordConfirm,
-          nickname: this.nickname,
-        });
+        // users의 actions에서 dispatch를 이용해서 users/signup을 호출한다.
+        try {
+          await this.$store.dispatch("users/signUp", {
+            email: this.email,
+            password: this.password,
+            passwordConfirm: this.passwordConfirm,
+            nickname: this.nickname,
+          });
+        } catch (err) {
+          console.err(err);
+        }
         alert("정상적으로 가입되었습니다.");
       } else {
         alert("가입이 실패하였습니다.");
       }
-      console.log(this.$refs.form.validate());
-      console.log(this.valid);
     },
   },
 };
 </script>
 
 <style></style>
+
+<!-- 
+onSubmitForm() {
+      if (this.$refs.form.validate()) {
+        // users의 actions에서 dispatch를 이용해서 users/signup을 호출한다.
+        this.$store
+          .dispatch("users/signUp", {
+            email: this.email,
+            password: this.password,
+            passwordConfirm: this.passwordConfirm,
+            nickname: this.nickname,
+          })
+          // dispatch(action)은 비동기이기때문에 then catch를 사용할수 있다.
+          .then(() => {
+            // 메인화면으로 보낸다.
+            this.$router.push({ path: "/" });
+          })
+          .catch((err) => {
+            console.err(err);
+          });
+        alert("정상적으로 가입되었습니다.");
+      } else {
+        alert("가입이 실패하였습니다.");
+      }
+}, 
+-->
