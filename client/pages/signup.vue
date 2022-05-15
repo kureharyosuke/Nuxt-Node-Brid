@@ -53,6 +53,7 @@ export default {
             passwordConfirm: this.passwordConfirm,
             nickname: this.nickname,
           });
+          this.$router.push({ path: "/" });
         } catch (err) {
           console.err(err);
         }

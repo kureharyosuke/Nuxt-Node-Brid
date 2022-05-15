@@ -11,5 +11,6 @@ export const mutations = {
 export const actions = {
   add({ commit }, payload) {
     commit("addMainPosts", payload, { root: true });
+    commit("addMainPosts", payload);
   },
 };
