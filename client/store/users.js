@@ -14,7 +14,6 @@ export const mutations = {
 // rootState, rootGetters, rootMutations, rootActions
 export const actions = {
   signUp({ commit }, payload) {
-    console.log("🚀 ~ file: users.js ~ line 16 ~ signUp ~ payload", payload);
     // 서버에 회원가입 요청을 보내는 부분
     commit("setMe", payload);
   },

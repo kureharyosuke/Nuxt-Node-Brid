@@ -22,7 +22,6 @@
     </nav>
     <!--# Header 가로로 먼저나누고 -->
     <div>{{ name }}</div>
-    <v-btn @click="onChangeName">바이</v-btn>
     <div>{{ user }}</div>
     <v-btn @click="onChangeUser">안녕</v-btn>
     <!-- # body 페이지 내용 -->
@@ -58,9 +57,6 @@ export default {
     },
   },
   methods: {
-    onChangeName() {
-      this.$store.commit("posts/SETPOSTS");
-    },
     onChangeUser() {
       this.$store.commit("users/setMe", "안녕");
     },
